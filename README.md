@@ -8,9 +8,9 @@ This is a project implementing 'transposition' and 'ceaser' ciphers using flask.
 >
 > cd ciphers-with-flask
 >
-> python3 -m venv <myenvname>
+> python3 -m venv 'myenvname'
 >
-> source <myenvname>/bin/activate
+> source 'myenvname'/bin/activate
 >
 > pip install -r requirements.txt
 >
