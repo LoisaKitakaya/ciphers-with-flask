@@ -1,0 +1,108 @@
+<!-- inherit from base template -->
+{% extends 'base.html' %}
+<!-- inherit from base template -->
+
+<!-- page title -->
+{% block title %} Transposition {% endblock %}
+<!-- page title -->
+
+<!-- page content -->
+{% block content %}
+<div class="pages">
+  <!--  -->
+  <ul class="nav nav-pills justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link encrypt active" aria-current="page" href="#"
+        >Encrypt</a
+      >
+    </li>
+    <li class="nav-item">
+      <a class="nav-link decrypt" href="#">Decrypt</a>
+    </li>
+  </ul>
+  <!--  -->
+  <form id="encryptform" action="/transposition_encrypt" method="POST">
+    <!--  -->
+    <h2 class="text-center cipher-title">Transposition Cipher (Encrypt)</h2>
+    <!--  -->
+    <hr />
+    <br />
+    <fieldset>
+      {{ form.csrf_token }}
+      <!--  -->
+      {{ form.text.label(class_="form-label") }}
+      <!--  -->
+      <br />
+      <!--  -->
+      {{ form.text(class_="form-control") }}
+      <!--  -->
+      <br />
+      <!--  -->
+      {{ form.key.label(class_="form-label") }}
+      <!--  -->
+      <br />
+      <!--  -->
+      {{ form.key(class_="form-control") }}
+      <!--  -->
+      <br />
+      <!--  -->
+      <div class="submit-btn">{{ form.submit(class_="btn btn-primary") }}</div>
+      <!--  -->
+      <br />
+      <!--  -->
+      {% if form.text.errors %}
+      <ul class="errors">
+        {% for error in form.text.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <!--  -->
+    </fieldset>
+  </form>
+  <!--  -->
+
+  <!--  -->
+  <form id="decryptform" action="/transposition_decrypt" method="POST">
+    <!--  -->
+    <h2 class="text-center cipher-title">Transposition Cipher (Decrypt)</h2>
+    <!--  -->
+    <hr />
+    <br />
+    <fieldset>
+      {{ form.csrf_token }}
+      <!--  -->
+      {{ form.text.label(class_="form-label") }}
+      <!--  -->
+      <br />
+      <!--  -->
+      {{ form.text(class_="form-control") }}
+      <!--  -->
+      <br />
+      <!--  -->
+      {{ form.key.label(class_="form-label") }}
+      <!--  -->
+      <br />
+      <!--  -->
+      {{ form.key(class_="form-control") }}
+      <!--  -->
+      <br />
+      <!--  -->
+      <div class="submit-btn">{{ form.submit(class_="btn btn-primary") }}</div>
+      <!--  -->
+      <br />
+      <!--  -->
+      {% if form.text.errors %}
+      <ul class="errors">
+        {% for error in form.text.errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <!--  -->
+    </fieldset>
+  </form>
+  <!--  -->
+</div>
+{% endblock %}
+<!-- page content -->

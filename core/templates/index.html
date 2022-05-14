@@ -1,0 +1,39 @@
+<!-- inherit from base template -->
+{% extends 'base.html' %}
+<!-- inherit from base template -->
+
+<!-- page title -->
+{% block title %} Home {% endblock %}
+<!-- page title -->
+
+<!-- page content -->
+{% block content %}
+<div class="pages">
+  <!--  -->
+  <h2 class="intro-title text-center">Cipher App</h2>
+  <hr />
+  <div class="intro-text-container fs-4">
+    <p class="intro-text">
+      Welcome to the 'Cipher App'. This is an application developed using Python
+      (Flask). This app enables you to encrypt and decrypt data using two very
+      basic ciphering techniques:
+    </p>
+    <br />
+    <ul>
+      <li>The Ceaser cipher</li>
+      <li>The Transposition cipher</li>
+    </ul>
+    <br />
+    <p class="intro-text">
+      The application is easy to use. Simply select one on the links at the top
+      right, and paste/write the text you either want to encrypt or decrypt; the
+      app process you text and return a block of either encrypted or decrypted
+      text.
+    </p>
+    <br />
+    <p class="text-center">ENJOY!</p>
+  </div>
+  <!--  -->
+</div>
+{% endblock %}
+<!-- page content -->
