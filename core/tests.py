@@ -116,4 +116,4 @@ def do_tests():
 # to run tests when running 'python test.py'
 if __name__ == '__main__':
 
-    unittest.main()
+    do_tests()
